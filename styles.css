@@ -1,7 +1,35 @@
-/* Customize the colors for ASCII art blocks */
-#ascii-container {
+/* Global reset and basic styling */
+body {
+    margin: 0;
+    padding: 0;
     font-family: monospace;
+}
+
+/* Styling for ASCII art container */
+.ascii-art {
     white-space: pre-wrap; /* Preserve whitespace */
     color: white; /* Default text color for ASCII characters */
     background-color: black; /* Default background color */
+    overflow: auto; /* Enable scrolling if content overflows */
+    max-width: 100%; /* Ensure ASCII art doesn't exceed screen width */
+}
+
+/* Styling for ASCII button */
+.ascii-button {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .ascii-art {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
 }
