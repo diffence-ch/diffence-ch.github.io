@@ -9,9 +9,9 @@ body {
 
 /* Container for ASCII art */
 #ascii-container {
-    padding: 20px;
-    font-size: 1.2em; /* Set a base font size */
-    line-height: 1.5; /* Adjust line height for readability */
+    padding: 10px;
+    font-size: 14px; /* Base font size (approximately 1em for 326 PPI) */
+    line-height: 1.4; /* Adjust line height for readability */
     max-width: 100%; /* Ensure the art does not exceed screen width */
     overflow: auto; /* Allow scrolling if necessary */
 }
@@ -30,8 +30,8 @@ body {
 /* ASCII button */
 #ascii-button {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 8px 16px;
+    font-size: 14px; /* Button font size (approximately 1em for 326 PPI) */
     background-color: black;
     color: white;
     border: 2px solid white;
@@ -39,14 +39,15 @@ body {
     cursor: pointer;
 }
 
-/* Media query for smaller screens (e.g., smartphones) */
-@media (max-width: 768px) {
+/* Media query for iPhone 5/5s/SE screen size (640×1136 at 326 PPI) */
+@media only screen and (max-width: 320px) and (max-height: 568px) and (-webkit-device-pixel-ratio: 2) {
     #ascii-container {
-        font-size: 1em; /* Decrease font size for smaller screens */
-        padding: 10px; /* Reduce padding for better use of space */
+        font-size: 12px; /* Decrease font size for smaller screens */
+        padding: 8px; /* Reduce padding for better use of space */
     }
 
     #ascii-button {
-        font-size: 0.8em; /* Decrease button font size */
+        font-size: 12px; /* Decrease button font size */
+        padding: 6px 12px; /* Adjust button padding */
     }
 }
