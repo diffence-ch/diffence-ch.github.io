@@ -3,152 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diffence CH</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            text-align: left; /* Align text to left */
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center; /* Align header text to center */
-        }
-        nav {
-            margin-top: 20px;
-            text-align: center; /* Align navigation links to center */
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            padding: 50px;
-            display: none; /* Hide all containers by default */
-        }
-        .container.show {
-            display: block; /* Show the container with class "show" */
-        }
-        h2 {
-            color: #333;
-            margin-top: 40px;
-        }
-        p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>ASCII Art Example</title>
 </head>
 <body>
-    <header>
-        <h1>Diffence.CH</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="about" class="container">
-        <h2>About Us</h2>
-        <p>Welcome to Diffence.CH, a security research lab dedicated to advancing the forefront of cybersecurity. At Diffence.CH, we are driven by a passion of supporting organizations who are tasked in ensuring public safety and safeguarding their way of life against disruptive threat actors. Our team comprises experts from diverse backgrounds in computer science, cryptography, and network security, united by a shared mission to innovate. Through cutting-edge research, we develop novel tools to aid our customers in achieving their strategic goals. Our commitment extends beyond traditional paradigms, as we strive to redefine the security landscape through collaboration, transparency, and continuous learning.</p>
-    </div>
-    <div id="contact" class="container">
-        <h2>Contact</h2>
-        <div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-8 offset-xl-2 text-center">
-            <div class="email-btn text-center" style="padding-top: 60px">
-               For more information, please drop us an <a href="mailto:info[at]diffence.ch" target="_blank" class="btn btn-outline-danger btn-lgbtn-lg  text-center center-block" style="width: 100px">email</a>.
-            </div>
-            <div class="text-center center-block">
-                For secure correspondences, please use our PGP key: 
-                <a href="#" id="pgp-link">77BA B5CD 9189 D22D 53AB  3C67 1EEA 44CC 98FD 5631</a>
-            </div>
-            <div id="pgp-key" class="text-center center-block pgp-key" style="padding-top: 60px; display: none;">
-                <pre>
-                    -----BEGIN PGP PUBLIC KEY BLOCK-----
-
-                    mDMEZgTThBYJKwYBBAHaRw8BAQdAXqbXQ8ilymJMvaR01A5P6ZWSA9xiuYJGIM82
-                    vw8z+Bq0MlBpc2h1IE1haHRhbmkgW0RpZmZlbmNlLkNIXSA8cG1haHRhbmlAZGlm
-                    ZmVuY2UuY2g+iJMEExYKADsWIQR3urXNkYnSLVOrPGce6kTMmP1WMQUCZgTThAIb
-                    AwULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRAe6kTMmP1WMeemAP4sYFmA
-                    JW1TiD9EarURJpzqqmnL/TPYDvmtS6hYkRVfswEA5X/xU4pKG6DdoWm2t3bVOgYK
-                    76H5nryVio25gPxcxQW4OARmBNOEEgorBgEEAZdVAQUBAQdAWQsY5/pM7qY4gZOm
-                    QDnpDNWLKvVHuoJVvdI7kQa+IVoDAQgHiHgEGBYKACAWIQR3urXNkYnSLVOrPGce
-                    6kTMmP1WMQUCZgTThAIbDAAKCRAe6kTMmP1WMR3yAP4me+45MNsKXwY89XXFeVoF
-                    b+btZiqUxx18Y60iqJtmUQD8C0isat6/qKskaLwWRykc+b6wDJpXJOrZ6lcDKMa/
-                    YAw=
-                    =j/o0
-                    -----END PGP PUBLIC KEY BLOCK-----
-                </pre>
-            </div>
-            <div class="text-center center-block" style="padding-top: 60px">
-                <i class="fas fa-fw fa-map-marker-alt"></i>
-                 Zürich, Switzerland
-            </div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all navigation links
-            const navLinks = document.querySelectorAll('nav a');
-
-            // Get all containers
-            const containers = document.querySelectorAll('.container');
-
-            // Add click event listener to each navigation link
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor behavior
-
-                    const targetId = this.getAttribute('href').substring(1); // Get target ID without '#'
-
-                    // Hide all containers
-                    containers.forEach(container => {
-                        container.classList.remove('show');
-                    });
-
-                    // Show the container corresponding to the clicked link
-                    document.getElementById(targetId).classList.add('show');
-                });
-            });
-
-            // Get the PGP link
-            const pgpLink = document.getElementById('pgp-link');
-
-            // Get the PGP key block
-            const pgpKey = document.getElementById('pgp-key');
-
-            // Add click event listener to the PGP link
-            pgpLink.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default anchor behavior
-
-                // Toggle the visibility of the PGP key block
-                pgpKey.style.display = pgpKey.style.display === 'none' ? 'block' : 'none';
-            });
-        });
-    </script>
+    <pre style="font-family: monospace;">
+              ▄▓▄              ▄        ▄         ▄       ▄     ▄
+    ░▄     ▄   ▀     ▄       ▄█       ▄█       ▀▄  ▓▄   ▄  ▓▄    ▓▄
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                  ║
+║ █████╗    ███████╗  ███████╗  ███████╗  ███████╗  ███╗   ██╗   ██████╗  ███████╗ ║
+║ ██╔══██╗  ╚═███╔═╝  ██╔════╝  ██╔════╝  ██╔════╝  ████╗  ██║  ██╔════╝  ██╔════╝ ║
+║ ██║  ██║    ███║    ███████╗  ███████╗  ███████╗  ██╔██╗ ██║  ██║       ███████╗ ║
+║ ██║  ██║    ███║    ██╔════╝  ██╔════╝  ██╔════╝  ██║╚██╗██║  ██║       ██╔════╝ ║
+║ █████╔╝   ███████╗  ██║       ██║       ███████╗  ██║ ╚████║  ╚██████╗  ███████╗ ║
+║ ╚════╝    ╚══════╝  ╚═╝       ╚═╝       ╚══════╝  ╚═╝  ╚═══╝   ╚═════╝  ╚══════╝ ║
+║                                                                                  ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+  ░  ░░░░░░░░░░  ░ ▄▓▄ ░░░░ ░ ▄▓▀  ░░░░  ▓▀   Diffence.CH   ▓██▀  ░p$m/Zürich░
+                    ▀        ▓▓█        ▀                  ▀▓
+                              ▀█                             ▀
+                                ▀
+   ┌───────────────────────────────────────────────────────────────────────────┐
+   │ About Us                                                                  │
+   └┬─────────────────────────────────────────────────────────────────────────┬┘
+    │                                                                         │
+    │   We are a a security research lab dedicated to advancing the           │
+    │   forefront of cybersecurity. We are driven by a passion of supporting  │
+    │   organizations who are tasked in ensuring public safety and            │
+    │   safeguarding their way of life against disruptive threat actors.      │
+    │                                                                         │
+    │   Through cutting-edge research, we develop novel capabilities to       │
+    │   aid our partners in achieving their strategic goals.                  │
+    │                                                                         │
+   ┌┴─────────────────────────────────────────────────────────────────────────┴┐
+   │ Research                                                                  │
+   └┬─────────────────────────────────────────────────────────────────────────┬┘
+    │                                                                         │
+    │   Our team focuses on state of the art research on the following areas: │
+    │                                                                         │
+    │   * Operating Systems                                                   │
+    │   * Compilers                                                           │
+    │   * Interpreters                                                        │
+    │   * Web Browsers                                                        │
+    │   * Hypervisors                                                         │
+    │   * Embedded Devices                                                    │
+    │                                                                         │
+   ┌┴─────────────────────────────────────────────────────────────────────────┴┐
+   │ Our Team                                                                  │
+   └┬─────────────────────────────────────────────────────────────────────────┬┘
+    │                                                                         │
+    │   Our team comprises experts from diverse backgrounds in                │
+    │   computer science, cryptography, and network security, united by a     │
+    │   shared mission to innovate.                                           │
+    │                                                                         │
+    │   Our commitment extends beyond traditional paradigms, as we strive to  │
+    │   redefine the security landscape through collaboration, transparency,  │
+    │   and continuous learning.                                              │
+    │                                                                         │
+   ┌┴─────────────────────────────────────────────────────────────────────────┴┐
+   │ Contact                                                                   │
+   └┬─────────────────────────────────────────────────────────────────────────┬┘
+    │                                                                         │
+    │   For more information, please drop us an email: info@diffence.ch       │
+    │                                                                         │
+    │   For secure correspondences, please use our PGP key:                   │
+    │                                                                         │
+    │   77BA B5CD 9189 D22D 53AB 3C67 1EEA 44CC 98FD 5631                     │
+    │                                                                         │
+    │                                                                         │
+    │   -----BEGIN PGP PUBLIC KEY BLOCK-----                                  │
+    │   mDMEZgTThBYJKwYBBAHaRw8BAQdAXqbXQ8ilymJMvaR01A5P6ZWSA9xiuYJGIM82      │
+    │   vw8z+Bq0MlBpc2h1IE1haHRhbmkgW0RpZmZlbmNlLkNIXSA8cG1haHRhbmlAZGlm      │
+    │   ZmVuY2UuY2g+iJMEExYKADsWIQR3urXNkYnSLVOrPGce6kTMmP1WMQUCZgTThAIb      │
+    │   AwULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRAe6kTMmP1WMeemAP4sYFmA      │
+    │   JW1TiD9EarURJpzqqmnL/TPYDvmtS6hYkRVfswEA5X/xU4pKG6DdoWm2t3bVOgYK      │
+    │   76H5nryVio25gPxcxQW4OARmBNOEEgorBgEEAZdVAQUBAQdAWQsY5/pM7qY4gZOm      │
+    │   QDnpDNWLKvVHuoJVvdI7kQa+IVoDAQgHiHgEGBYKACAWIQR3urXNkYnSLVOrPGce      │
+    │   6kTMmP1WMQUCZgTThAIbDAAKCRAe6kTMmP1WMR3yAP4me+45MNsKXwY89XXFeVoF      │
+    │   b+btZiqUxx18Y60iqJtmUQD8C0isat6/qKskaLwWRykc+b6wDJpXJOrZ6lcDKMa/      │
+    │   YAw=                                                                  │
+    │   =j/o0                                                                 │
+    │   -----END PGP PUBLIC KEY BLOCK-----                                    │
+    │                                                                         │    
+    └─────────────────────────────────────────────────────────────────────────┘
+    </pre>
 </body>
 </html>
