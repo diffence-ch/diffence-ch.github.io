@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
     background-color: black; /* Set a background color for the body */
     color: white; /* Default text color */
 }
@@ -10,7 +10,6 @@ body {
 /* Container for ASCII art */
 #ascii-container {
     padding: 20px;
-    white-space: pre-wrap;
     font-size: 1.2em; /* Set a base font size */
     line-height: 1.5; /* Adjust line height for readability */
     max-width: 100%; /* Ensure the art does not exceed screen width */
@@ -38,4 +37,16 @@ body {
     border: 2px solid white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Media query for smaller screens (e.g., smartphones) */
+@media (max-width: 768px) {
+    #ascii-container {
+        font-size: 1em; /* Decrease font size for smaller screens */
+        padding: 10px; /* Reduce padding for better use of space */
+    }
+
+    #ascii-button {
+        font-size: 0.8em; /* Decrease button font size */
+    }
 }
