@@ -3,33 +3,39 @@ body {
     margin: 0;
     padding: 0;
     font-family: monospace;
+    background-color: black; /* Set a background color for the body */
+    color: white; /* Default text color */
 }
 
-/* Styling for ASCII art container */
-.ascii-art {
-    white-space: pre-wrap; /* Preserve whitespace */
-    color: white; /* Default text color for ASCII characters */
-    background-color: black; /* Default background color */
-    overflow: auto; /* Enable scrolling if content overflows */
-    max-width: 100%; /* Ensure ASCII art doesn't exceed screen width */
+/* Container for ASCII art */
+#ascii-container {
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 1.2em; /* Set a base font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    max-width: 100%; /* Ensure the art does not exceed screen width */
+    overflow: auto; /* Allow scrolling if necessary */
 }
 
-/* Styling for ASCII button */
-.ascii-button {
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-    padding: 10px;
+/* ASCII art */
+#ascii-art {
+    margin: 0;
+}
+
+/* Container for ASCII button */
+#ascii-button-container {
+    text-align: center; /* Center align the button */
     margin-top: 20px;
+}
+
+/* ASCII button */
+#ascii-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
     border: 2px solid white;
     border-radius: 5px;
-}
-
-/* Media query for responsiveness on smaller screens */
-@media (max-width: 768px) {
-    .ascii-art {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
+    cursor: pointer;
 }
