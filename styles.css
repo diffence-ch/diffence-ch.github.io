@@ -1,0 +1,7 @@
+/* Customize the colors for ASCII art blocks */
+#ascii-container {
+    font-family: monospace;
+    white-space: pre-wrap; /* Preserve whitespace */
+    color: white; /* Default text color for ASCII characters */
+    background-color: black; /* Default background color */
+}
