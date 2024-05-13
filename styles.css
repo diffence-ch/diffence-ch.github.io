@@ -11,7 +11,7 @@ body {
 #ascii-container {
     padding: 10px;
     font-size: 14px; /* Base font size (approximately 1em for 326 PPI) */
-    line-height: 1.4; /* Adjust line height for readability */
+    line-height: 1; /* Adjust line height for tighter spacing */
     max-width: 100%; /* Ensure the art does not exceed screen width */
     overflow: auto; /* Allow scrolling if necessary */
 }
