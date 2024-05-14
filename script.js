@@ -25,4 +25,3 @@ function getRandomColor() {
     }
     return color;
 }
-
