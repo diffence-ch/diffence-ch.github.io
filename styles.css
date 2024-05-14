@@ -7,6 +7,19 @@ body {
     color: white; /* Default text color */
 }
 
+/* Cookie banner styling */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
 /* Container for ASCII art */
 #ascii-container {
     padding: 10px;

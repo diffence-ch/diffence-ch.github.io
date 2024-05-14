@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+});
+
+function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
 function changeColors() {
     const asciiContainer = document.getElementById('ascii-container');
 
@@ -14,3 +25,4 @@ function getRandomColor() {
     }
     return color;
 }
+
