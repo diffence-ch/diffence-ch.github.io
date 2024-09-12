@@ -1,0 +1,114 @@
+/* Global reset and basic styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: white;
+}
+
+/* Cookie banner styling */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+#cookie-banner p {
+    margin: 0;
+}
+
+/* Link styling */
+#cookie-banner a {
+    color: white;
+    text-decoration: underline;
+}
+
+#cookie-banner button {
+    margin-left: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Policy container styling */
+.policy-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+.policy-container h1,
+.policy-container h2 {
+    color: white;
+}
+
+.policy-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.policy-container ul li {
+    margin-bottom: 10px;
+}
+
+.policy-container a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Container for ASCII art */
+#ascii-container {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1;
+    max-width: 100%;
+    overflow: auto;
+}
+
+/* ASCII art */
+#ascii-art {
+    margin: 0;
+}
+
+/* Container for ASCII button */
+#ascii-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ASCII button */
+#ascii-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media query for iPhone 5/5s/SE screen size (640×1136 at 326 PPI) */
+@media only screen and (max-width: 320px) and (max-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+    #ascii-container {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #ascii-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

@@ -1,0 +1,15 @@
+# Security.txt for Diffence.CH
+# This file provides security researchers with guidelines on how to report security vulnerabilities.
+# For more information, visit https://diffence.ch/security
+
+Contact: mailto:security@diffence.ch
+Encryption: https://diffence.ch/pgp-key.txt
+Acknowledgements: https://diffence.ch/security/acknowledgements
+Preferred-Languages: en, de, fr, it
+Policy: https://diffence.ch/security-policy
+Hiring: https://diffence.ch/careers
+
+# Optional fields
+Expires: 2025-08-28T00:00:00.000Z
+
+# Version of security.txt: 1.0
