@@ -1,43 +1,52 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Check for cookies acceptance
+    // Check for cookies acceptance and show/hide the cookie banner
+    const cookieBanner = document.getElementById('cookie-banner');
     if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'block';
+        cookieBanner.style.display = 'block';
+    } else {
+        cookieBanner.style.display = 'none';
     }
 
     // Floating button and menu functionality
     const floatingButton = document.getElementById('floatingButton');
     const menu = document.getElementById('menu');
 
-    floatingButton.addEventListener('click', () => {
-        // Toggle the menu visibility
-        if (menu.style.display === 'none' || menu.style.display === '') {
-            menu.style.display = 'block';
-        } else {
-            menu.style.display = 'none';
-        }
-    });
+    // Toggle the menu visibility when the floating button is clicked
+    if (floatingButton) {
+        floatingButton.addEventListener('click', () => {
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    }
 
-    // Close the menu when clicking outside of it
+    // Hide the menu when clicking outside of it
     document.addEventListener('click', (event) => {
-        if (!floatingButton.contains(event.target) && !menu.contains(event.target)) {
+        if (floatingButton && !floatingButton.contains(event.target) && !menu.contains(event.target)) {
             menu.style.display = 'none';
         }
     });
 
-    // Other functions
+    // Function to accept cookies
     function acceptCookies() {
         localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-banner').style.display = 'none';
+        if (cookieBanner) {
+            cookieBanner.style.display = 'none';
+        }
     }
 
+    // Function to change colors of ASCII art
     function changeColors() {
         const asciiContainer = document.getElementById('ascii-container');
-
-        // Randomly change colors of ASCII art
-        asciiContainer.style.color = getRandomColor();
-        asciiContainer.style.backgroundColor = getRandomColor();
+        if (asciiContainer) {
+            asciiContainer.style.color = getRandomColor();
+            asciiContainer.style.backgroundColor = getRandomColor();
+        }
     }
 
+    // Function to generate a random color
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = '#';
@@ -47,6 +56,15 @@ document.addEventListener("DOMContentLoaded", function() {
         return color;
     }
 
-    // Make sure to attach event listeners or perform any setup needed for these functions
-    // For example, you might need to call acceptCookies() on some user action or setup changeColors() as needed
+    // Attach the acceptCookies function to the button in the cookie banner
+    const acceptButton = document.querySelector('#cookie-banner button');
+    if (acceptButton) {
+        acceptButton.addEventListener('click', acceptCookies);
+    }
+
+    // Optionally, if there's a button to change colors, attach the event listener here
+    const changeColorsButton = document.getElementById('ascii-button');
+    if (changeColorsButton) {
+        changeColorsButton.addEventListener('click', changeColors);
+    }
 });
