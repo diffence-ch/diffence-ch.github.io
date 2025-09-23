@@ -10,6 +10,6 @@ Policy: https://diffence.ch/security-policy
 Hiring: https://diffence.ch/careers
 
 # Optional fields
-Expires: 2025-08-28T00:00:00.000Z
+Expires: 2026-08-28T00:00:00.000Z
 
-# Version of security.txt: 1.0
+# Version of security.txt: 1.1
